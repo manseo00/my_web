@@ -60,7 +60,7 @@
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         if(prediction[0].className == "cocacola" && prediction[0].probability.toFixed(2) == 1.00){
-            labelContainer.childNodes[0].innerHTML = "코카콜라. 콜라 한 캔(355ml)에는 당분이 약 35mg 정도 들어있습니다. 당분은 1ml당 4kcal의 열량을 내므로 약 136-140kcal를 함유하고 있는 셈입니다. 밥 한공기 (210mg)가 약 300kcal의 열량을 내므로 콜라 한 캔은 반 공기에 버금갑니다. 탄산가스, 설탕, 과당, 향료, 나트륨 등이 첨가돼있습니다. 대표적인 것이 콜라죠."
+            labelContainer.childNodes[0].innerHTML =  "코카콜라. 콜라 한 캔(355ml)에는 당분이 약 35mg 정도 들어있습니다."," 당분은 1ml당 4kcal의 열량을 내므로 약 136-140kcal를 함유하고 있는 셈입니다."," 밥 한공기 (210mg)가 약 300kcal의 열량을 내므로 콜라 한 캔은 반 공기에 버금갑니다."," 탄산가스, 설탕, 과당, 향료, 나트륨 등이 첨가돼있습니다."
         } else if(prediction[1].className == "powerade" && prediction[1].probability.toFixed(2) == 1.00){
             labelContainer.childNodes[0].innerHTML = "파워에이드. 칼로리는 250ml 한 캔에 80kcal 정도입니다. 당류는 20g정도 들어있습니다. 이온을 넣어 체액과 비슷한 농도로 만든 것입니다. 그래서 빠르게 흡수돼 땀으로 나간 수분과 전해질을 공급합니다. 약간 단맛이 나는 것은 설탕, 과당, 향료 등이 함유돼 있어서입니다."
         } else if(prediction[2].className == "pocari sweat" && prediction[2].probability.toFixed(2) == 1.00){
